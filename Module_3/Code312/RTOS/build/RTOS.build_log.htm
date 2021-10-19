@@ -21,7 +21,7 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-D:\CUBoulder\MESA\Project_2\Code3_3\Code312\RTOS\RTOS.uvprojx
+D:\CUBoulder\MESA\ECEN5803-Project-2-SpectrumAnalyzer\Module_3\Code312\RTOS\RTOS.uvprojx
 Project File Date:  10/18/2021
 
 <h2>Output:</h2>
@@ -40,16 +40,6 @@ mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
 mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
     } while (__strex(c2, first));
 mbed-rtos/rtx/rt_Semaphore.c: 4 warnings, 0 errors
-compiling rt_List.c...
-mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
-      if ((cnt = __ldrex(count)) == size) {
-mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
-    } while (__strex(cnt+1, count));
-mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
-      c2 = (cnt = __ldrex(first)) + 1;
-mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
-    } while (__strex(c2, first));
-mbed-rtos/rtx/rt_List.c: 4 warnings, 0 errors
 compiling rt_Mailbox.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
       if ((cnt = __ldrex(count)) == size) {
@@ -90,6 +80,26 @@ mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
 mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
     } while (__strex(c2, first));
 mbed-rtos/rtx/rt_Task.c: 4 warnings, 0 errors
+compiling rt_List.c...
+mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/rt_List.c: 4 warnings, 0 errors
+compiling HAL_CM.c...
+mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/HAL_CM.c: 4 warnings, 0 errors
 compiling rt_System.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
       if ((cnt = __ldrex(count)) == size) {
@@ -104,16 +114,6 @@ mbed-rtos/rtx/rt_System.c(228): warning:  #3731-D: intrinsic is deprecated
 mbed-rtos/rtx/rt_System.c(228): warning:  #3731-D: intrinsic is deprecated
       rt_dec (&os_psq->count);
 mbed-rtos/rtx/rt_System.c: 6 warnings, 0 errors
-compiling HAL_CM.c...
-mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
-      if ((cnt = __ldrex(count)) == size) {
-mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
-    } while (__strex(cnt+1, count));
-mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
-      c2 = (cnt = __ldrex(first)) + 1;
-mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
-    } while (__strex(c2, first));
-mbed-rtos/rtx/HAL_CM.c: 4 warnings, 0 errors
 compiling rt_Robin.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
       if ((cnt = __ldrex(count)) == size) {
@@ -201,7 +201,7 @@ C:\Users\Sankalp\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS
   #define __FPU_PRESENT             1U       /*!< FPU present                                   */
 src\main.cpp: 1 warning, 0 errors
 linking...
-Program Size: Code=13000 RO-data=480 RW-data=204 ZI-data=1464  
+Program Size: Code=24168 RO-data=1632 RW-data=240 ZI-data=1812  
 ".\build\RTOS.axf" - 0 Error(s), 67 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -225,7 +225,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.3.0
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

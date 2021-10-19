@@ -27,8 +27,11 @@ Define other inputs and outputs
 */
 
 //Write your code here
+AnalogIn pot(A0);
+PwmOut red_led(D7);
+osMutexId gPotentiometerMutex;
 
-
+float gPotValue;
 //Display temperature on the LCD
 void temp_thread(void const *args){
 	
@@ -38,16 +41,29 @@ void temp_thread(void const *args){
 
 //Adjust the brightness of the RGB LED
 void adjust_brightness(void const *args){
-	
 	//write your code here
-	
+	while(1)
+	{
+		osMutexWait(gPotentiometerMutex, 0);
+		gPotValue = pot.read();
+		red_led.write(gPotValue);
+		osMutexRelease(gPotentiometerMutex);
+	}
 }
 
 //Blink an LED
 void led1_thread(void const *args){
 	
 	//write your code here
-	
+	while(1)
+	{
+		osMutexWait(gPotentiometerMutex, 0);
+		red_led.write(0);
+		wait(500);
+		red_led.write(gPotValue);
+		wait(500);
+		osMutexRelease(gPotentiometerMutex);
+	}
 }
 
 //Display a counter on the LCD
@@ -67,10 +83,14 @@ int main(){
 	Start all threads
 	Wait for timer interrupt
 	*/
-	
 	//write your code here
-	
-	
+	red_led.period_ms(500);
+	osMutexDef (gPotentiometerMutex);
+	gPotentiometerMutex = osMutexCreate(osMutex(gPotentiometerMutex));
+	while(1)
+	{
+		
+	}
 }
 
 // *******************************ARM University Program Copyright (c) ARM Ltd 2014*************************************
