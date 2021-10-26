@@ -5,13 +5,13 @@
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/TARGET_STM/TARGET_NUCLEO_F401RE/objects.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/cmsis.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx.h
-.\build\nhd_0216hz.o: C:\Users\Sankalp\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f401xc.h
+.\build\nhd_0216hz.o: C:\Users\USER\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f401xc.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/core_cm4.h
 .\build\nhd_0216hz.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/core_cmInstr.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/core_cmFunc.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/core_cm4_simd.h
-.\build\nhd_0216hz.o: C:\Users\Sankalp\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+.\build\nhd_0216hz.o: C:\Users\USER\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx_hal.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx_hal_conf.h
 .\build\nhd_0216hz.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx_hal_rcc.h
