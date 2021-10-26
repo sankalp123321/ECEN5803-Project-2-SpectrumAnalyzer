@@ -28,6 +28,7 @@ Define other inputs and outputs
 */
 
 //Write your code here
+<<<<<<< HEAD
 //	static void temp_thread();
 //	static void adjust_brightness();
 //	static void led1_thread();
@@ -65,6 +66,13 @@ osSemaphoreDef(ccount);
 float gPotValue;
 //float temp;
 uint32_t count = 0;
+=======
+AnalogIn pot(A0);
+PwmOut red_led(D7);
+osMutexId gPotentiometerMutex;
+
+float gPotValue;
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 //Display temperature on the LCD
 void temp_thread(void const *args){
 	
@@ -95,6 +103,7 @@ void temp_thread(void const *args){
 void adjust_brightness(void const *args){
 	//write your code here
 	while(1)
+<<<<<<< HEAD
 	{	
 		osSemaphoreWait(adjust,osWaitForever);
 		printf("2");
@@ -111,6 +120,13 @@ void adjust_brightness(void const *args){
 		osSemaphoreRelease(led1_);
 		//wait_ms(3000);
 
+=======
+	{
+		osMutexWait(gPotentiometerMutex, 0);
+		gPotValue = pot.read();
+		red_led.write(gPotValue);
+		osMutexRelease(gPotentiometerMutex);
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 	}
 }
 
@@ -120,6 +136,7 @@ void led1_thread(void const *args){
 	//write your code here
 	while(1)
 	{
+<<<<<<< HEAD
 		osSemaphoreWait(led1_,osWaitForever);
 		//Thread::wait(osWaitForever);
 		//sem_blink.wait(500);
@@ -135,6 +152,14 @@ void led1_thread(void const *args){
 		//Thread::yield();
 		osSemaphoreRelease(ccount);
 		//wait_ms(500);
+=======
+		osMutexWait(gPotentiometerMutex, 0);
+		red_led.write(0);
+		wait(500);
+		red_led.write(gPotValue);
+		wait(500);
+		osMutexRelease(gPotentiometerMutex);
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 	}
 }
 
@@ -184,6 +209,7 @@ int main(){
 	Wait for timer interrupt
 	*/
 	//write your code here
+<<<<<<< HEAD
 	
 	gPotentiometerMutex = osMutexCreate(osMutex(gPotentiometerMutex));
 	LCD_mutex = osMutexCreate(osMutex(LCD_mutex));
@@ -247,6 +273,15 @@ int main(){
 //	led_brightness.join();
 //	led_blink.join();
 //	thread_counter();
+=======
+	red_led.period_ms(500);
+	osMutexDef (gPotentiometerMutex);
+	gPotentiometerMutex = osMutexCreate(osMutex(gPotentiometerMutex));
+	while(1)
+	{
+		
+	}
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 }
 
 // *******************************ARM University Program Copyright (c) ARM Ltd 2014*************************************

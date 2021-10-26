@@ -21,8 +21,13 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
+<<<<<<< HEAD
 C:\Users\USER\Documents\ECEN5803 Mastering\Project2\Code3_3\Code312\RTOS\RTOS.uvprojx
 Project File Date:  10/22/2021
+=======
+D:\CUBoulder\MESA\ECEN5803-Project-2-SpectrumAnalyzer\Module_3\Code312\RTOS\RTOS.uvprojx
+Project File Date:  10/18/2021
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
@@ -49,6 +54,7 @@ mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
       c2 = (cnt = __ldrex(first)) + 1;
 mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
     } while (__strex(c2, first));
+<<<<<<< HEAD
 mbed-rtos/rtx/rt_Task.c: 4 warnings, 0 errors
 compiling rt_System.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
@@ -73,6 +79,8 @@ mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
       c2 = (cnt = __ldrex(first)) + 1;
 mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
     } while (__strex(c2, first));
+=======
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 mbed-rtos/rtx/rt_Semaphore.c: 4 warnings, 0 errors
 compiling rt_Mailbox.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
@@ -104,6 +112,29 @@ mbed-rtos/rtx/rt_Mailbox.c(278): warning:  #3731-D: intrinsic is deprecated
 mbed-rtos/rtx/rt_Mailbox.c(278): warning:  #3731-D: intrinsic is deprecated
           rt_inc (&p_CB->count);
 mbed-rtos/rtx/rt_Mailbox.c: 14 warnings, 0 errors
+<<<<<<< HEAD
+=======
+compiling rt_Task.c...
+mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/rt_Task.c: 4 warnings, 0 errors
+compiling rt_List.c...
+mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/rt_List.c: 4 warnings, 0 errors
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 compiling HAL_CM.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
       if ((cnt = __ldrex(count)) == size) {
@@ -114,6 +145,20 @@ mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
 mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
     } while (__strex(c2, first));
 mbed-rtos/rtx/HAL_CM.c: 4 warnings, 0 errors
+compiling rt_System.c...
+mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/rt_HAL_CM.h(206): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+mbed-rtos/rtx/rt_HAL_CM.h(208): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+mbed-rtos/rtx/rt_HAL_CM.h(210): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/rt_System.c(228): warning:  #3731-D: intrinsic is deprecated
+      rt_dec (&os_psq->count);
+mbed-rtos/rtx/rt_System.c(228): warning:  #3731-D: intrinsic is deprecated
+      rt_dec (&os_psq->count);
+mbed-rtos/rtx/rt_System.c: 6 warnings, 0 errors
 compiling rt_Robin.c...
 mbed-rtos/rtx/rt_HAL_CM.h(203): warning:  #3731-D: intrinsic is deprecated
       if ((cnt = __ldrex(count)) == size) {
@@ -205,8 +250,13 @@ src\main.cpp(456): warning:  #1-D: last line of file ends without a newline
   // *******************************ARM University Program Copyright (c) ARM Ltd 2014*************************************
 src\main.cpp: 3 warnings, 0 errors
 linking...
+<<<<<<< HEAD
 Program Size: Code=27448 RO-data=2184 RW-data=584 ZI-data=4076  
 ".\build\RTOS.axf" - 0 Error(s), 69 Warning(s).
+=======
+Program Size: Code=24168 RO-data=1632 RW-data=240 ZI-data=1812  
+".\build\RTOS.axf" - 0 Error(s), 67 Warning(s).
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 
 <h2>Software Packages used:</h2>
 
@@ -228,8 +278,13 @@ Package Vendor: Keil
 
 <h2>Collection of Component Files used:</h2>
 
+<<<<<<< HEAD
    * Component: ARM::CMSIS:CORE:5.5.0
 Build Time Elapsed:  00:00:06
+=======
+   * Component: ARM::CMSIS:CORE:5.3.0
+Build Time Elapsed:  00:00:04
+>>>>>>> 0fc7f6db277e3fa1a62a5e9257a798027335d3d6
 </pre>
 </body>
 </html>
