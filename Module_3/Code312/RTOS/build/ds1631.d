@@ -5,13 +5,13 @@
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/TARGET_STM/TARGET_NUCLEO_F401RE/objects.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/cmsis.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx.h
-.\build\ds1631.o: C:\Users\Sankalp\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f401xc.h
+.\build\ds1631.o: C:\Users\USER\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f401xc.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/core_cm4.h
 .\build\ds1631.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/core_cmInstr.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/core_cmFunc.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/core_cm4_simd.h
-.\build\ds1631.o: C:\Users\Sankalp\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+.\build\ds1631.o: C:\Users\USER\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx_hal.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx_hal_conf.h
 .\build\ds1631.o: mbed/TARGET_NUCLEO_F401RE/stm32f4xx_hal_rcc.h
