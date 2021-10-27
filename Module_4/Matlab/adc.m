@@ -3,7 +3,7 @@ dt = 1/fs; % seconds per sample
 StopTime = 0.4096; % seconds 
 t = (0:dt:StopTime); % seconds 
 F = 1004; % Sine wave frequency (hertz) 
-data = sin(2*pi*F*t) + sin(2*pi*800*t);
+data = sin(2*pi*F*t);
 
 FID = fopen('samples.txt', 'w');
 if FID == -1, error('Cannot create file.'); end
