@@ -66,7 +66,7 @@
     #define ENDP
     #define END
 
-	.syntax unified
+    .syntax unified
 #endif
 
 	CODESECT

@@ -5,74 +5,75 @@
 #include "arm_common_tables.h"
 #include "arm_const_structs.h"
 #include "math_helper.h"
- 
+#include "fft_inp.h"
+
+#define SAMPLING_FREQUENCY 10000.0f
+
 /* FFT settings */
-#define SAMPLES                 512             /* 256 real party and 256 imaginary parts */
+#define SAMPLES                 8192             /* 256 real party and 256 imaginary parts */
 #define FFT_SIZE                SAMPLES / 2     /* FFT size is always the same size as we have samples, so 256 in our case */
- 
 /* Global variables */
-float32_t Input[SAMPLES];
-float32_t Output[FFT_SIZE];
+
+#define _HARD_CODED_
+
+unsigned int maxIndex = 0;
+float32_t maxValue;
 bool      trig=0;
+
 /* MBED class APIs */
-DigitalOut myled(LED1);
+DigitalOut myled(D13);
 AnalogIn   myADC(A1);
-//AnalogOut  myDAC(D13);
 Serial     pc(USBTX, USBRX);
 Ticker     timer;
- 
+Ticker     led_timer;
+
+float32_t Input[SAMPLES];
+float32_t Output[FFT_SIZE];
+
+float freq_equiv = SAMPLING_FREQUENCY/(float)(SAMPLES/2.0f);
+
 void sample()
 {
-   trig=1;
+   trig = 1;
 }
- 
+
+bool ledState = 0;
+void led_blinker()
+{
+    ledState = !ledState;
+    myled = ledState;
+}
+
 int main() {
- 
-    //arm_cfft_instance_f32 S;   // ARM CFFT module
-    float maxValue;            // Max FFT value is stored here
-    uint32_t maxIndex;         // Index in Output array where max value is
-    bool once=0;
     pc.baud(115200);
-    pc.printf("Starting FFT\r\n");
-    while(1) 
-		{
-			timer.attach_us(&sample,20); //20us 50KHz sampling rate
+    while(1){
+      memset(Input, 0, SAMPLES);
+      memset(Output, 0, FFT_SIZE);
+      k = 0;
+      timer.attach_us(&sample, 100);
       for (int i = 0; i < SAMPLES; i += 2) 
-			{
-				while (trig==0){}
-				trig=0;
-				Input[i] = myADC.read() - 0.5f; //Real part NB removing DC offset
-				Input[i + 1] = 0;               //Imaginary Part set to zero
-			}
-      timer.detach();
-      // Init the Complex FFT module, intFlag = 0, doBitReverse = 1
-      //NB using predefined arm_cfft_sR_f32_lenXXX, in this case XXX is 256
-      arm_cfft_f32(&arm_cfft_sR_f32_len256, Input, 0, 1);
- 
-      // Complex Magniture Module put results into Output(Half size of the Input)
-      arm_cmplx_mag_f32(Input, Output, FFT_SIZE);
-      
-      //Calculates maxValue and returns corresponding value
-      arm_max_f32(Output, FFT_SIZE, &maxValue, &maxIndex);
- 
-      if (once==0)
-			{
-				pc.printf("Maximum is %f\r\n",maxValue);
-				once = 1;
+      {
+          while(!trig) {}
+          trig = 0;
+#ifdef _HARD_CODED_
+        Input[i] =  tone[k]; //Real part NB removing DC offset
+#else
+        Input[i] =  myADC.read() - 0.5f; //Real part NB removing DC offset
+#endif
+        Input[i + 1] = 0;               //Imaginary Part set to zero
+        k++;
       }
-      
-      //maxValue /= 100.0f;
-      
-//      myDAC=1.0f;     //SYNC Pulse to DAC Output
-//      wait_us(20);    //Used on Oscilliscope set trigger level to the highest
-//      myDAC=0.0f;     //point on this pulse (all FFT data will be scaled
-//                        //90% of Max Value
-//        
-//        for (int i=0; i<FFT_SIZE/2 ; i++){
-//            myDAC=(Output[i]/maxValue)*0.9f; // Scale to Max Value and scale to 90%
-//            wait_us(10); //Each pulse of 10us is 50KHz/256 = 195Hz resolution
-//            }
-//        myDAC=0.0f;
-       }
+      timer.detach();
+      /* Process the data through the CFFT/CIFFT module */
+      arm_cfft_f32(&arm_cfft_sR_f32_len4096, Input, 0, 1);
+
+      /* Process the data through the Complex Magniture Module for calculating the magnitude at each bin */
+      arm_cmplx_mag_f32(Input, Output, FFT_SIZE);
+
+      /* Calculates maxValue and returns corresponding value */
+      arm_max_f32(Output, FFT_SIZE, &maxValue, &maxIndex);
+      printf("Max value: %f Index: %u Frequency: %fHz\r\n", Output[maxIndex], maxIndex, freq_equiv*(float)maxIndex);
+
+      led_timer.attach_us(led_blinker, (1000000/(freq_equiv*(float)maxIndex)));
+    }
 }
-            
